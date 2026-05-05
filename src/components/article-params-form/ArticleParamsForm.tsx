@@ -106,45 +106,57 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 					className={styles.form}
 					onSubmit={handleSubmit}
 					onReset={handleReset}>
-					<Text as='h2' size={31} weight={800} align='left'>
-						Задайте параметры
-					</Text>
+					<div className={styles.titleWrapper}>
+						<Text as='h2' size={31} weight={800} align='left' uppercase>
+							Задайте параметры
+						</Text>
+					</div>
 
-					<Select
-						title='Шрифт'
-						options={fontFamilyOptions}
-						selected={fontFamily}
-						onChange={setFontFamily}
-					/>
+					<div className={styles.field}>
+						<Select
+							title='Шрифт'
+							options={fontFamilyOptions}
+							selected={fontFamily}
+							onChange={setFontFamily}
+						/>
+					</div>
 
-					<RadioGroup
-						title='Размер шрифта'
-						name='fontSize'
-						options={fontSizeOptions}
-						selected={fontSize}
-						onChange={setFontSize}
-					/>
+					<div className={styles.field}>
+						<RadioGroup
+							title='Размер шрифта'
+							name='fontSize'
+							options={fontSizeOptions}
+							selected={fontSize}
+							onChange={setFontSize}
+						/>
+					</div>
 
-					<Select
-						title='Цвет текста'
-						options={fontColors}
-						selected={fontColor}
-						onChange={setFontColor}
-					/>
+					<div className={styles.fieldLarge}>
+						<Select
+							title='Цвет текста'
+							options={fontColors}
+							selected={fontColor}
+							onChange={setFontColor}
+						/>
+					</div>
 
-					<Select
-						title='Цвет фона'
-						options={backgroundColors}
-						selected={backgroundColor}
-						onChange={setBackgroundColor}
-					/>
+					<div className={styles.field}>
+						<Select
+							title='Цвет фона'
+							options={backgroundColors}
+							selected={backgroundColor}
+							onChange={setBackgroundColor}
+						/>
+					</div>
 
-					<Select
-						title='Ширина контента'
-						options={contentWidthArr}
-						selected={contentWidth}
-						onChange={setContentWidth}
-					/>
+					<div className={styles.fieldLast}>
+						<Select
+							title='Ширина контента'
+							options={contentWidthArr}
+							selected={contentWidth}
+							onChange={setContentWidth}
+						/>
+					</div>
 
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' htmlType='reset' type='clear' />
